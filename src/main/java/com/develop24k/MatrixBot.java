@@ -10,8 +10,6 @@ public class MatrixBot extends Bot {
     MatrixBot(){
         super(BotInfo.fromInputStream(Thread.currentThread().getContextClassLoader().getResourceAsStream("matrixbot.json")));
     }
-    boolean stop;
-
     @Override
     public void run()
     {

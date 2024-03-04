@@ -1,2 +1,2 @@
-set SERVER_SECRET=+QnvlgXSOCi8CIcd8l6+pQ
+set SERVER_SECRET=vu/I3rowk3q37uRc5XOM8A
 java -jar target/matrix-bot.jar

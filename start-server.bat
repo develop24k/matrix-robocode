@@ -1,0 +1,1 @@
+java -jar ./Arena/robocode-tankroyale-gui-0.22.1.jar
