@@ -1,0 +1,14 @@
+{
+  "name": "Matrix",
+  "version": "1.0",
+  "authors": [
+    "Aseem Mathur"
+  ],
+  "description": "The Matrix Bot.",
+  "homepage": "",
+  "countryCodes": [
+    "in"
+  ],
+  "platform": "JVM",
+  "programmingLang": "Java 11"
+}
