@@ -34,10 +34,8 @@ public class MatrixBot extends Bot {
 
     @Override
     public void onHitBot(HitBotEvent e) {
-        turnToFaceTarget(e.getX(), e.getY());
+        headOnTarget(e.getX(), e.getY());
 
-        // Determine a shot that won't kill the bot...
-        // We want to ram him instead for bonus points
         if (e.getEnergy() > 16) {
             fire(3);
         } else if (e.getEnergy() > 10) {
@@ -50,7 +48,6 @@ public class MatrixBot extends Bot {
             fire(.1);
         }
         else run();
-        //forward(40); // Ram him again!
     }
 
     @Override
@@ -75,16 +72,10 @@ public class MatrixBot extends Bot {
         if (bearingFromGun == 0) {
             rescan();
         }
-
-
     }
 
-    @Override
-    public void onCustomEvent(CustomEvent customEvent) {
-        System.out.println(customEvent.getTurnNumber());
-    }
 
-    private void turnToFaceTarget(double x, double y) {
+    private void headOnTarget(double x, double y) {
         var bearing = bearingTo(x, y);
         if (bearing >= 0) {
             turnDirection = 1;
@@ -94,14 +85,12 @@ public class MatrixBot extends Bot {
         turnLeft(bearing);
     }
 
-    // We were hit by a bullet -> turn perpendicular to the bullet
     @Override
     public void onHitByBullet(HitByBulletEvent e) {
-        // Calculate the bearing to the direction of the bullet
+
         var bearing = calcBearing(e.getBullet().getDirection());
 
-        // Turn 90 degrees to the bullet direction based on the bearing
-        turnLeft(90 - bearing);
+        turnRight(90 - bearing);
 
     }
 
